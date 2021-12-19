@@ -31,10 +31,17 @@
 </template>
 
 <script>
+import {sendExcel} from "@/api/excelSender";
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  mounted() {
+    sendExcel().then(res => {
+      console.log(res)
+    });
   }
 }
 </script>
